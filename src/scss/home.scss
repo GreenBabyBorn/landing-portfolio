@@ -1,0 +1,76 @@
+.main {
+  margin-top: -40px;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 39px;
+  }
+  &__content {
+    position: relative;
+    @media (min-width: $mobile) {
+      padding: rem(40) 0px rem(30) 0px;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 23px;
+    }
+  }
+  &__name {
+    font-family: "Gilroy-Bold";
+    font-size: rem(47);
+    line-height: em(59, 47);
+    color: #070707;
+  }
+  &__text {
+    font-size: rem(18);
+    line-height: em(22, 18);
+    color: #070707;
+  }
+  &__language-select {
+  }
+  &__img {
+    & .human-mobile {
+      @media (min-width: $mobile) {
+        display: none;
+      }
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    & .human {
+      @media (max-width: $mobile) {
+        display: none;
+      }
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.language-select {
+  @include adaptiveValue("font-size", 18, 34);
+  font-family: "Gilroy-Bold";
+  transform: rotate(180deg);
+  display: inline;
+  writing-mode: tb-rl;
+  color: $grayColor;
+  @media (max-width: $mobile) {
+    align-self: flex-end;
+  }
+  &__eng {
+    cursor: pointer;
+    &._active {
+      color: $mainColor;
+    }
+  }
+  &__ru {
+    cursor: pointer;
+    &._active {
+      color: $mainColor;
+    }
+  }
+}

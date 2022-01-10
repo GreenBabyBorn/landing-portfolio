@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("html/head.html",{
+"title" : "Главная"
+})
+
+<body>
+	<div class="wrapper">
+		@@include("html/header.html",{
+		})
+		<main class="page">
+			<sestion class="main">
+				<div class="main__container">
+					<div class="main__content">
+
+						<h1 class="main__name">Denis <br> Novik</h1>
+						<p class="main__text">UX | UI designer <br> 24 years old, Minsk</p>
+						<div data-da=".menu__list, 768,last" class="main__language-select language-select">
+							<span class="language-select__ru">RU</span>
+
+							<span style="color: black;">|</span>
+							<span class="language-select__eng _active">ENG</span>
+						</div>
+					</div>
+					<div class="main__img">
+						<img class="human" src="@img/main/human.jpg" alt="">
+						<img class="human-mobile" src="@img/main/human-mobile.jpg" alt="">
+					</div>
+				</div>
+			</sestion>
+		</main>
+		@@include("html/footer.html",{
+		})
+	</div>
+	@@include("html/js.html",{
+	})
+</body>
+
+</html>

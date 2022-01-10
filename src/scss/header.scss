@@ -1,0 +1,125 @@
+.header {
+  height: 87px;
+  @media (max-width: $mobile) {
+    height: 65px;
+  }
+  &__container {
+    height: 87px;
+    display: flex;
+    align-items: center;
+  }
+  &__menu {
+    width: 100%;
+    @media (max-width: $mobile) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  &__line {
+    height: 1px;
+    background-color: $grayColor;
+  }
+}
+.menu {
+  &__body {
+    position: relative;
+    transition: all 0.3s ease 0s;
+    @media (max-width: $mobile) {
+      position: absolute;
+      top: 0%;
+      width: 100%;
+      height: 100%;
+      left: -100%;
+      z-index: 5;
+      padding: 80px 15px 100px 15px;
+      background-color: white;
+      .menu-open & {
+        left: 0px;
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      row-gap: rem(68);
+    }
+  }
+  &__item {
+  }
+  &__link {
+    font-family: "Gilroy-Bold";
+    @include adaptiveValue("font-size", 18, 34);
+    color: $grayColor;
+    &._active {
+      color: $mainColor;
+    }
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $mainColor;
+      }
+    }
+  }
+  &__icon {
+  }
+}
+.icon-menu {
+}
+
+//------------------------------
+
+//Burger
+
+.icon-menu {
+  display: none;
+  @media (max-width: $mobile) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px 0px 0px 0px;
+    width: 33px;
+    height: rem(19.19);
+    cursor: pointer;
+    z-index: 5;
+
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      left: 0px;
+      position: absolute;
+      width: 100%;
+      height: rem(3.84);
+      background-color: #000;
+      .menu-open & {
+        background-color: $grayColor;
+      }
+    }
+    &::before {
+      top: 0px;
+    }
+    &::after {
+      bottom: 0px;
+    }
+    span {
+      top: calc(50% - 1.5px);
+    }
+    .menu-open & {
+      span {
+        transform: scale(0);
+      }
+      &::before {
+        transform: rotate(-45deg);
+        top: calc(50% - 1.5px);
+      }
+      &::after {
+        transform: rotate(45deg);
+        bottom: calc(50% - 1.5px);
+      }
+    }
+  }
+}
