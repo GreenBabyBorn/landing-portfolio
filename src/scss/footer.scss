@@ -1,0 +1,71 @@
+.footer {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include adaptiveValue("padding-top", 114, 82);
+    @include adaptiveValue("padding-bottom", 123, 90);
+  }
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 20, 27);
+    }
+  }
+  &__text {
+    text-align: center;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 29, 39);
+    }
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    font-family: Gilroy-Bold;
+    line-height: em(22, 18);
+    text-align: center;
+    color: #ffffff;
+    border-radius: rem(50);
+    height: 42px;
+    // width: 180px;
+    padding: 0px 15px;
+    transition: all 0.3s ease 0s;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 85, 48);
+    }
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: black;
+        background-color: #ffffff;
+        outline: 1px solid black;
+      }
+    }
+  }
+  &__social {
+    max-width: 385px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 45, 48);
+    }
+  }
+  &__likedin {
+  }
+  &__instagram {
+  }
+  &__behance {
+  }
+  &__surface {
+  }
+  &__caption {
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: $grayColor;
+  }
+}

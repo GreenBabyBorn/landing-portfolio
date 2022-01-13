@@ -1,9 +1,26 @@
+.title {
+  font-family: "Gilroy-Bold";
+  font-size: rem(34);
+  line-height: em(42, 34);
+  color: #070707;
+}
+.text {
+  font-size: rem(18);
+  line-height: em(22, 18);
+  color: #070707;
+}
+
+//========================================================================================================================================================
 .main {
   margin-top: -40px;
+  margin-bottom: 100px;
   &__container {
+    padding-top: 87px;
+    @include adaptiveValue("padding-top", 87, 65);
     display: flex;
     flex-direction: column;
     row-gap: 39px;
+    @include adaptiveValue("margin-bottom", 100, 80);
   }
   &__content {
     position: relative;
@@ -60,17 +77,173 @@
   color: $grayColor;
   @media (max-width: $mobile) {
     align-self: flex-end;
+    justify-self: flex-end;
+    // flex: 1 0 auto;
   }
   &__eng {
     cursor: pointer;
+
     &._active {
       color: $mainColor;
     }
   }
   &__ru {
     cursor: pointer;
+
     &._active {
       color: $mainColor;
     }
   }
+}
+//========================================================================================================================================================
+.about {
+  background: #f6f6f6;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //  padding: 120px 0px 107px 0px;
+    @include adaptiveValue("padding-top", 120, 80);
+    @include adaptiveValue("padding-bottom", 107, 60);
+  }
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 17, 30);
+      margin-bottom: 17px;
+    }
+  }
+  &__text {
+    max-width: rem(485);
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+}
+//========================================================================================================================================================
+.skills {
+  &__container {
+    @include adaptiveValue("padding-top", 91, 83);
+    @include adaptiveValue("padding-bottom", 110, 98);
+  }
+  &__title {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: rem(60);
+    }
+  }
+  &__text {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: rem(80);
+    }
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @media (max-width: $tablet) {
+      row-gap: rem(80);
+      column-gap: rem(40);
+    }
+  }
+  &__item {
+  }
+}
+
+.item-skills {
+  flex: 0 1 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__img {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 23, 24);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__title {
+    font-family: "Gilroy-Bold";
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    max-width: 80px;
+    color: $grayColor;
+    flex: 1 1 auto;
+    &:not(:last-child) {
+      margin-bottom: rem(41);
+    }
+  }
+  &__stars {
+    display: flex;
+    column-gap: 9px;
+  }
+  &__star {
+    //  background: url("@img/icons/icons.svg#star");
+
+    &._active path {
+      fill: black;
+    }
+  }
+}
+//========================================================================================================================================================
+.portfolio {
+  background: #f6f6f6;
+  &__container {
+    @include adaptiveValue("padding-top", 112, 81);
+    @include adaptiveValue("padding-bottom", 96, 80);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 77px;
+  }
+  &__title {
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(35);
+    align-items: center;
+  }
+  &__img {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__link {
+    //  border-bottom: 1px solid black;
+    white-space: nowrap;
+    transition: all 0.3s ease 0s;
+    line-height: em(22, 18);
+    position: relative;
+    height: 100%;
+    @media (any-hover: hover) {
+      &:hover {
+        &::before {
+          transform: translateY(rem(-18));
+        }
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background: black;
+      bottom: 3px;
+      left: 0;
+      transition: all 0.3s ease 0s;
+    }
+  }
+}
+.title {
 }

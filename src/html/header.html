@@ -4,14 +4,16 @@
 
 			<nav class="menu__body">
 				<ul class="menu__list">
-					<li class="menu__item"><a href="" class="menu__link _active">Home</a></li>
-					<li class="menu__item"><a href="" class="menu__link">About me</a></li>
-					<li class="menu__item"><a href="" class="menu__link">Skills</a></li>
-					<li class="menu__item"><a href="" class="menu__link">Portfolio</a></li>
-					<li class="menu__item"><a href="" class="menu__link">Contacts</a></li>
+					<li data-goto="main" class="menu__item"><a href="" class="menu__link _active">Home</a></li>
+					<li data-goto="about" class="menu__item"><a href="" class="menu__link">About me</a></li>
+					<li data-goto="skills" class="menu__item"><a href="" class="menu__link">Skills</a></li>
+					<li data-goto="portfolio" class="menu__item"><a href="" class="menu__link">Portfolio</a></li>
+					<li data-goto="contact" class="menu__item"><a href="" class="menu__link">Contacts</a></li>
+					<li data-goto="contact" id="language-select" class="menu__item"></li>
 				</ul>
 			</nav>
-			<button data-da=".main__name, 768,last" type="button" class="menu__icon icon-menu"><span></span></button>
+			<button type="button" class="menu__icon icon-menu"><span></span></button>
+			<!-- <button data-da=".main__name, 768,last" type="button" class="menu__icon icon-menu"><span></span></button> -->
 		</div>
 		<hr class="header__line">
 	</div>

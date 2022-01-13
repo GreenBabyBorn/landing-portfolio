@@ -16,23 +16,30 @@ import "./libs/dynamic_adapt.js";
 /* Слайдер Swiper */
 // import "./libs/swiper.js";
 
-// import * as Scroll from "./modules/scroll.js";
+import * as Scroll from "./modules/scroll.js";
 
 // Наблюдатель за объектами c атрибутом data-watch
 // Документация по работе в шаблоне: js/libs/watcher.js
 // Сниппет(HTML):
 // Для включения подсказок в консоли, указать  параметр true
-// Scroll.scrollWatcher(false);
+Scroll.scrollWatcher(false);
 
 // Плавная навигация по странице
-// Scroll.pageNavigation();
+Scroll.pageNavigation();
 
 // Подключение споллеров
 // functions.spollers();
 
-const menuLinks = document.querySelectorAll(".menu__item");
+const menuLinks = document.querySelectorAll(".menu__link");
+const menuBody = document.querySelectorAll(".menu__body");
 
 menuLinks.forEach((item) => {
   item.addEventListener("click", functions.menuClose);
   item.addEventListener("click", functions.bodyUnlock);
 });
+// menuBody.forEach((item) => {
+//   item.addEventListener("click", functions.menuClose);
+//   item.addEventListener("click", functions.bodyUnlock);
+// });
+
+import "./modules/translate.js";

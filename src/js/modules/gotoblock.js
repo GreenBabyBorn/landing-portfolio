@@ -14,7 +14,7 @@ import "../libs/smoothScroll.js";
 export let gotoBlock = (
   targetBlock,
   noHeader = false,
-  speed = 100,
+  speed = 1000,
   offset = 0
 ) => {
   let headerItem = "";
@@ -27,7 +27,7 @@ export let gotoBlock = (
     speed: speed,
     header: headerItem,
     offset: offset,
-    easing: "easeInOutQuart",
+    easing: "easeOutQuint",
   };
   const targetBlockElement = document.querySelector(targetBlock);
   targetBlockElement
