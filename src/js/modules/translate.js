@@ -64,18 +64,28 @@ ruBtn.addEventListener("click", (item) => {
   enBtn.classList.remove("_active");
   ruBtn.classList.add("_active");
   location.href = window.location.pathname + "#ru";
-  changeLanguage();
+  // changeLanguage();
+  window.location.reload();
 });
 enBtn.addEventListener("click", (item) => {
   ruBtn.classList.remove("_active");
   enBtn.classList.add("_active");
   location.href = window.location.pathname + "#en";
-  changeLanguage();
+  // changeLanguage();
+  window.location.reload();
 });
 
 function changeLanguage() {
   let hash = window.location.hash;
   hash = hash.substr(1);
+  if (hash === "en") {
+    ruBtn.classList.remove("_active");
+    enBtn.classList.add("_active");
+  }
+  if (hash === "ru") {
+    enBtn.classList.remove("_active");
+    ruBtn.classList.add("_active");
+  }
   //   console.log(hash);
   if (!allLang.includes(hash)) {
     location.href = window.location.pathname + "#en";
